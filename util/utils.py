@@ -123,7 +123,7 @@ def dtw(dist_mat):
                     np.min(np.stack([dist[i - 1, j], dist[i, j - 1]], axis=0), axis=0) \
                     + dist_mat[i, j]
     path = _traceback(dist)
-    return dist[-1,-1]/sum(dist.shape), dist, path
+    return dist[-1,-1]/(sum(dist.shape)-1), dist, path
 
 def read_image(img_path):
     got_img = False
